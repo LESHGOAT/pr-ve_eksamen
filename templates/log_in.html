@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Logg inn</title>
+    <link rel="stylesheet" href="../static/log_in.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Logg inn</h2>
+        <form action="/login" method="POST">
+            <label>Brukernavn:</label>
+            <input type="text" name="username" required>
+
+            <label>Passord:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Logg inn</button>
+        </form>
+        <p>Har du ikke bruker? <a href="/signup">Registrer deg her</a></p>
+    </div>
+</body>
+</html>

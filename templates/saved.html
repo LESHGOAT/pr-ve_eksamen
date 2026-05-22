@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Lagrede oppskrifter</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Matoppskrifter</h1>
+    <div class="logout">
+        <p>Logget inn som: <strong>{{ username }}</strong> | <a href="/">Hjem</a> | <a href="/logout">Logg ut</a></p>
+    </div>
+
+    <h2>Mine lagrede oppskrifter</h2>
+    <table>
+        <tr>
+            <th>Navn</th>
+            <th>Ingredienser</th>
+            <th>Fremgangsmåte</th>
+            <th>Koketid</th>
+            <th>Porsjoner</th>
+            <th>Lagt til av</th>
+            <th>Handling</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.ingredienser }}</td>
+            <td>{{ recipe.fremgangsmåte }}</td>
+            <td>{{ recipe.koketid }}</td>
+            <td>{{ recipe.prsjoner }}</td>
+            <td>{{ recipe.added_by }}</td>
+            <td>
+                <form action="/unsave/{{ recipe.id }}" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-btn">Fjern</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

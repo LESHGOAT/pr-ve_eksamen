@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Matoppskrifter</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Matoppskrifter</h1>
+    <div class="logout">
+        <p>Logget inn som: <strong>{{ username }}</strong> | <a href="/logout">Logg ut</a></p>
+    </div>
+
+    <h2>Legg til ny oppskrift</h2>
+    <form action="/add" method="POST">
+        <label>Navn:</label>
+        <input type="text" name="name" required>
+
+        <label>Ingredienser:</label>
+        <textarea name="ingredienser" required></textarea>
+
+        <label>Fremgangsmåte:</label>
+        <textarea name="fremgangsmåte" required></textarea>
+
+        <label>Koketid (timer):</label>
+        <input type="number" step="0.01" name="koketid" required>
+
+        <label>Antall porsjoner:</label>
+        <input type="number" name="prsjoner" required>
+
+        <button type="submit">Legg til oppskrift</button>
+    </form>
+
+    <h2>Alle oppskrifter</h2>
+    <table>
+        <tr>
+            <th>Navn</th>
+            <th>Ingredienser</th>
+            <th>Fremgangsmåte</th>
+            <th>Koketid</th>
+            <th>Porsjoner</th>
+            <th>Lagt til av</th>
+            <th>Handling</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.ingredienser }}</td>
+            <td>{{ recipe.fremgangsmåte }}</td>
+            <td>{{ recipe.koketid }}</td>
+            <td>{{ recipe.prsjoner }}</td>
+            <td>{{ recipe.added_by }}</td>
+            <td>
+                <form action="/delete/{{ recipe.id }}" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-btn">Slett</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

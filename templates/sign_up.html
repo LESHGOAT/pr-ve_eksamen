@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer bruker</title>
+ <link rel="stylesheet" href="../static/sign_up.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lag ny bruker</h2>
+        <form action="/signup" method="POST">
+            <label>Brukernavn:</label>
+            <input type="text" name="username" required>
+
+            <label>Passord:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Registrer</button>
+        </form>
+        <p>Har du allerede en bruker? <a href="/login">Logg inn her</a></p>
+    </div>
+
+    <footer>
+       <a href="/faq">OFTE STILLTE SPØRSMÅL</a>
+    </footer>
+</body>
+</html>

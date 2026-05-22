@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slett mine data</title>
+    <link rel="stylesheet" href="/static/faq.css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Slett mine data</h1>
+            <p>Du har rett til å bli glemt (GDPR artikkel 17). Fyll inn brukernavn og passord for å slette alle dine data permanent.</p>
+        </header>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="success-msg">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="form-card">
+            <p>Dette vil slette kontoen din, lagrede oppskrifter og anonymisere alle spørsmål du har sendt inn.</p>
+            <form method="POST" action="/slett-data">
+                <div class="form-row">
+                    <input type="text" name="username" placeholder="Brukernavn" required>
+                    <input type="password" name="password" placeholder="Passord" required>
+                </div>
+                <button type="submit" style="background: #dc2626; color: white;">Slett alle mine data</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
