@@ -3,13 +3,49 @@
 ## Hva er prosjektet?
 Matoppskrifter er en webapplikasjon der brukere kan registrere seg, logge inn og dele matoppskrifter med hverandre. Tanken bak prosjektet er å lage et enkelt og oversiktlig sted der folk kan samle og dele oppskrifter. Prosjektet er bygget med Python og Flask som backend, MySQL som database, og HTML/CSS som frontend. Databasen kjører på en Raspberry Pi som fungerer som en lokal server.
 
-## Funksjonalitet
-
 ### Brukerregistrering og innlogging
 Brukere kan opprette en konto med brukernavn og passord. Når man logger inn opprettes en sesjon som holder brukeren innlogget mens de navigerer på siden. Uten en aktiv sesjon blir man automatisk sendt tilbake til innloggingssiden.
 
 ### Legge til oppskrifter
 Innloggede brukere kan fylle ut et skjema med navn på oppskriften, ingredienser, fremgangsmåte, koketid og antall porsjoner. Når skjemaet sendes inn lagres oppskriften i databasen og blir synlig for alle brukere på hovedsiden.
+
+### database
+
++-------------------------+
+| Tables_in_mat_oppskrift |
++-------------------------+
+| oppskrift               |
+| saved_recipes           |
+| users                   |
++-------------------------+
+oppskrift
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name           | varchar(255) | YES  |     | NULL    |                |
+| ingredienser   | text         | YES  |     | NULL    |                |
+| fremgangsmåte  | text         | YES  |     | NULL    |                |
+| koketid        | float(3,2)   | YES  |     | NULL    |                |
+| prsjoner       | int(11)      | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+saved_recipes 
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username  | varchar(255) | YES  |     | NULL    |                |
+| recipe_id | int(11)      | YES  | MUL | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+ users 
+ +---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username      | varchar(50)  | NO   | UNI | NULL    |                |
+| password_hash | varchar(255) | NO   |     | NULL    |                |
+| epost         | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
 
 ### Se alle oppskrifter
 På hovedsiden vises alle oppskrifter som er lagt til av alle brukere i en tabell. Tabellen viser navn, ingredienser, fremgangsmåte, koketid, porsjoner og hvem som la til oppskriften.
