@@ -79,4 +79,4 @@ Det er lagt inn fem ferdige spørsmål og svar om temaer som innlogging, oppskri
 Brukere kan også sende inn egne spørsmål via et skjema med navn, e-post og spørsmålstekst.
 Alle innsendte spørsmål lagres i en egen tabell i databasen, og brukeren vil få svar tilbake på e-posten de oppgir.
 I tillegg er det en egen side (/slett-data) der brukere kan slette alle sine personopplysninger i henhold til GDPR artikkel 17.
-Når en bruker ber om sletting anonymiseres alle FAQ-spørsmål de har sendt inn, lagrede oppskrifter slettes, og brukerkontoen fjernes permanent.
+Når en bruker ber om sletting anonymiseres alle FAQ-spørsmål de har sendt inn, lagrede oppskrifter slettes, og brukerkontoen fjernes permanent. 
