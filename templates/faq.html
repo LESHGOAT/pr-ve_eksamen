@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/static/faq.css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Ofte stilte spørsmål (FAQ)</h1>
+            <p>Her finner du svar på vanlige spørsmål om Matoppskrifter-appen.</p>
+        </header>
+
+        <div class="faq-item">
+            <h2>Hvordan logger jeg inn?</h2>
+            <p>Gå til <a href="/login">/login</a> og skriv inn brukernavn og passord.
+               Har du ikke konto, kan du registrere deg på <a href="/signup">/signup</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Hvordan legger jeg til en oppskrift?</h2>
+            <p>Etter innlogging kan du legge til oppskrifter via skjemaet på forsiden.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Hvordan sletter jeg en oppskrift?</h2>
+            <p>Klikk på «Slett»-knappen ved siden av oppskriften og bekreft slettingen.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Koster det noe å lage bruker?</h2>
+            <p>Nei, det er helt gratis å opprette konto og bruke Matoppskrifter-appen.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Hvordan behandles persondata?</h2>
+            <p>Vi lagrer kun nødvendige opplysninger og følger GDPR. Du kan når som helst
+               be om å få alle dine data slettet.</p>
+        </div>
+
+        <h2 class="section-title">Fant du ikke svar? Send oss et spørsmål</h2>
+
+        <div class="form-card">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="success-msg">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="/faq">
+              <div class="form-row">
+           <input type="text" name="navn" placeholder="Navn" required>
+            <input type="email" name="epost" placeholder="E-post" required>
+            </div>
+                <textarea name="sporsmal" placeholder="Skriv spørsmålet ditt her..." required></textarea>
+                <button type="submit">Send spørsmål</button>
+            </form>
+        </div>
+            <p>Vil du slette alle dine data? <a href="/slett-data">Klikk her</a></p>
+    </div>
+    </div>
+    
+</body>
+</html>
