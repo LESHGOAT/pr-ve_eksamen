@@ -61,17 +61,7 @@ Brukere kan lagre oppskrifter de liker ved å trykke på en lagreknapp i tabelle
 ### Passord-hashing
 Per nå lagres passord i klartekst i databasen, noe som ikke er trygt. Planen er å implementere passord-hashing slik at passord lagres kryptert og ikke kan leses direkte fra databasen, selv om noen skulle få tilgang til den.
 
-### Forbedret lagre-side
-Lagre-siden skal videreutvikles med bedre design og mer funksjonalitet, som for eksempel sortering og kategorisering av lagrede oppskrifter, slik at det blir enklere å finne frem til det man leter etter.
-
-### Lage Figma-skisse
-Før utvikling av lagre-siden skal det lages en skisse i Figma. Dette gir en god oversikt over hvordan siden skal se ut og fungere før man begynner å kode.
-
-### Sette opp database for lagre-siden
-Det skal opprettes en egen tabell i databasen for å håndtere lagrede oppskrifter. Tabellen kobler brukere til oppskrifter de har lagret, slik at hver bruker får sin egen personlige liste.
-
-### Utvikle lagre-siden
-Selve lagre-siden skal bygges og kobles til databasen. Målet er å gi brukeren en oversiktlig side der de enkelt kan se, administrere og navigere mellom sine lagrede oppskrifter. Dette vil tilføre mer funksjonalitet til applikasjonen og gjøre den mer komplett som produkt.
+### Terms Of Service
 
 ### Lage FAQ
 Det skal lages en egen FAQ-side (/faq) der brukere kan lese svar på vanlige spørsmål om appen. Siden er tilgjengelig uten innlogging.
