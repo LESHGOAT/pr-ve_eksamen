@@ -56,6 +56,18 @@ Brukere kan slette oppskrifter direkte fra tabellen på hovedsiden. Når en opps
 ### Lagre favorittoppskrifter
 Brukere kan lagre oppskrifter de liker ved å trykke på en lagreknapp i tabellen. Lagrede oppskrifter dukker opp på en egen side der brukeren kun ser sine egne favoritter. Herfra kan brukeren også fjerne oppskrifter fra listen sin.
 
+### FAQ
+Brukere kan benytte FAQ-seksjonen for å finne svar på ytterligere spørsmål de måtte ha om ulike temaer. De vanligste spørsmålene er besvart på forhånd, og det er også mulig å sende inn flere spørsmål nederst på siden for å motta svar på e-post.
+
+### slette bruker
+Brukere kan når som helst slette kontoen sin. Dette innebærer at alle oppskrifter de har lagt til, alle spørsmål de har stilt, samt all innsamlet data, blir permanent slettet.
+
+### passord hashing
+Brukernes passord lagres i databasen som en kryptert eller hashet streng bestående av tall, bokstaver og spesialtegn. Dette erstatter ikke passordet i brukbar form, men sørger for at det ikke lagres i klartekst, slik at det forblir skjult og beskyttet i databasen.
+
+### Terms Of Service (vilkår)
+Før en bruker kan opprette konto eller logge inn, må de godkjenne en vilkårsliste. Denne listen omfatter blant annet informasjon om GDPR, samt hvordan innsamlet data behandles og benyttes. Dette er nødvendig for å sikre at tjenesten opererer i samsvar med gjeldende personvernlovgivning, og for å tydelig definere hvilke rettigheter og plikter som gjelder før noen form for databehandling finner sted.
+
 ## Planlagt fremtidig funksjonalitet
 
 ### Passord-hashing
